@@ -1,0 +1,35 @@
+<div class="bootstrap-wrapper">
+<div class="container">
+     <h2> Employee List</h2>
+     <button class="mb20" mat-raised-button color="primary" routerLink="/">Add</button>
+    <table class = "table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th>  Name </th>
+                <th>  Contact No</th>
+                <th> Course Name </th>
+                <th> Date </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let employee of elite" >
+                <td> {{ employee.id }} </td>
+                <td> {{ employee.name }} </td>
+                <td> {{ employee.contactNo }} </td>
+                <td >{{ employee.course.courseName }}</td>
+                <td> {{employee.date}} </td>
+                <td>
+                    <button (click)="updateElite(employee.id)"  mat-raised-button color="primary"> Update</button>
+                    <button (click)="delete(employee.id)" mat-raised-button color="warn" style="margin-left: 10px"> Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+

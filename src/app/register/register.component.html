@@ -1,0 +1,82 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <mat-card>
+              <mat-card-header>
+              <h1 class="mb20">Sample Form With Controls</h1>
+              </mat-card-header>
+              <form class="ml20 mr20" (ngSubmit) =formSubmit()>
+               <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Enter Name" name="name" [(ngModel)]="elite.name" >
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>contactNo</mat-label>
+                  <input matInput placeholder="Enter contactNo" name="contactNo"  [(ngModel)]="elite.contactNo">
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field  class="example-full-width mt20 width">
+                  <mat-label>Courses</mat-label>
+                  <mat-select  name="course" [(ngModel)]="elite.course.id">
+                    <mat-option *ngFor="let c of courses" [value]="c.id">
+                      {{c.courseName}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field appearance="fill" class="example-form-field example-full-width">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="datepicker" name="date" [(ngModel)]="elite.date">
+                  <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                  <mat-datepicker #datepicker>
+                    <mat-datepicker-actions>
+                      <button mat-button matDatepickerCancel>Cancel</button>
+                      <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                    </mat-datepicker-actions>
+                  </mat-datepicker>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>state</mat-label>
+                  <input matInput placeholder="Enter state" name="state"  [(ngModel)]="elite.state">
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-label><h3>Select an option for payment</h3></mat-label>
+                <mat-radio-group aria-label="Select an option" name="paymentMode" [(ngModel)]="elite.paymentMode">
+                  <mat-radio-button value="online">Online</mat-radio-button>
+                  <mat-radio-button value="cash" >Cash</mat-radio-button>
+                </mat-radio-group>
+              </div>
+               <div class="md-3">
+               <mat-form-field class="example-full-width">
+                <mat-label>Leave a description</mat-label>
+                <textarea matInput placeholder="Ex. It makes me feel..." name="description"  [(ngModel)]="elite.description"></textarea>
+              </mat-form-field>
+            </div>
+            <div class="md-3">
+              <mat-checkbox [(ngModel)]="elite.approval" name="approval">Approved</mat-checkbox>
+            </div>
+            <mat-divider></mat-divider>
+                  <div class="container mt20 mb20">
+                  <button  type="submit" mat-raised-button color="primary" >Register</button>
+                  <button mat-raised-button color="warn" type="reset" class="ml20">Clear</button>
+                 </div>
+                </form>
+                <mat-divider></mat-divider>
+                <div class="container mt20 mb20 text-center">
+                  <button mat-raised-button color="primary" class="ml20" routerLink="/data-table">Data Table</button>
+              </div>
+              </mat-card>
+           </div>
+        </div>
+    </div>
+    </div>
+    
