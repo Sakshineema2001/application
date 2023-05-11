@@ -12,15 +12,35 @@ export class RegisterComponent implements OnInit{
   public elite = {
     name : '',
     contactNo : '',
-    state : '',
     approval: '',
     description : '',
     paymentMode : '',
     date : '',
+    state : {
+      id: ''
+    },
+    city : {
+      id: ''
+    },
     course : {
      id : ''
     }
 }
+
+public city = [
+  {
+    id : '',
+    city : ''
+  }
+]
+
+
+ public state = [
+  {
+    id : '',
+    state : ''
+  }
+]
 
 public courses = [
  {
@@ -39,10 +59,15 @@ ngOnInit(): void {
  },(error) => {
    alert('something went wrong')
  })
+ this.service.getAllState().subscribe((data:any) =>{
+  this.state = data;
+ })
+
 }
 
 formSubmit(){
  this.service.addData(this.elite).subscribe((data) =>{
+
    this.goToEliteList();
  }, (error) =>{
    alert('failed');
@@ -52,5 +77,14 @@ formSubmit(){
 goToEliteList(){
   this.router.navigate(['/data-table']);
 }
+
+
+onChangeState(elite: any) {
+   const id = elite.state.id;
+   if (id) {
+    this.service.getCities(id).subscribe((data :any)=> 
+      this.city = data
+    ); } 
+   }
 
 }

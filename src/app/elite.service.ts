@@ -12,7 +12,6 @@ export class EliteService {
   constructor(private http:HttpClient) { }
 
   public addData(elite:any){
-    console.log("i am here..............")
     return this.http.post(`${this.baseurl}/post`,elite)
   }
 
@@ -35,4 +34,13 @@ export class EliteService {
   deleteElite(id: number){
     return this.http.delete(`${this.baseurl}/delete/${id}`)
   }
+
+  getAllState(){
+    return this.http.get(`${this.baseurl}/state`)
+  }
+
+  getCities(id: number) {
+    return this.http.get(`${this.baseurl}/cities/${id}`)
+  }
+
 }

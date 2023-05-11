@@ -23,8 +23,8 @@
                 <mat-form-field  class="example-full-width mt20 width">
                   <mat-label>Courses</mat-label>
                   <mat-select  name="course" [(ngModel)]="elite.course.id">
-                    <mat-option  [value]="elite.course.id">
-                      {{elite.course.courseName}}
+                    <mat-option *ngFor="let c of courses" [value]="c.id">
+                      {{c.courseName}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
@@ -43,9 +43,23 @@
                 </mat-form-field>
                </div>
                <div class="md-3">
-                <mat-form-field class="example-full-width">
-                  <mat-label>state</mat-label>
-                  <input matInput placeholder="Enter state" name="state"  [(ngModel)]="elite.state">
+                <mat-form-field  class="example-full-width mt20 width">
+                  <mat-label>State</mat-label>
+                  <mat-select  name="state" [(ngModel)]="elite.state.id" (ngModelChange)="onChangeState(elite)">
+                    <mat-option *ngFor="let s of states" [value]="s.id">
+                      {{s.state}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field  class="example-full-width mt20 width">
+                  <mat-label>City</mat-label>
+                  <mat-select  name="city" [(ngModel)]="elite.city.id">
+                    <mat-option *ngFor="let c of cities" [value]="c.id">
+                      {{c.city}}
+                    </mat-option>
+                  </mat-select>
                 </mat-form-field>
                </div>
                <div class="md-3">

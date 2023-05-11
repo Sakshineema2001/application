@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Elite } from 'src/Elite';
 import { EliteService } from '../elite.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,8 +9,25 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateEliteComponent {
  
-  id !: number;
-  elite : Elite = new Elite();
+  id !: any;
+  elite: any = {
+    course: {
+      id: '',
+      courseName: ''
+    },
+    state: {
+      id: '',
+      state: ''
+    },
+    city:{
+       id: '',
+       city: ''
+    }
+  };
+  // cities : any;
+  cities :any;
+  states :any;
+  courses:any;
   
   constructor(private service: EliteService,
     private route: ActivatedRoute,
@@ -21,11 +37,23 @@ export class UpdateEliteComponent {
     this.id = this.route.snapshot.params['id'];
     this.service.getEliteById(this.id).subscribe(data => {
       console.log(data)
-      this.elite = data as Elite;
+      this.elite = data;
     }, error => console.log(error));
+
+  this.service.getCourses().subscribe((data:any)=>{
+      this.courses=data;
+  })
+
+    this.service.getAllState().subscribe((data:any) =>{
+      this.states=data;
+      console.log(this.states)
+      this.onChangeState(this.elite)
+     },(error:any) =>{
+      alert('something went wrong')
+  });
+
   }
   
-
   formSubmit(){
     this.service.updateElite(this.id, this.elite).subscribe( data =>{
       this.goToEliteList();
@@ -36,4 +64,12 @@ export class UpdateEliteComponent {
   goToEliteList(){
     this.router.navigate(['/data-table']);
   }
+
+  onChangeState(elite:any) {
+    const id = elite.state.id;
+     this.service.getCities(id).subscribe((cities :any)=> {
+       this.cities = cities;
+     }
+     );
+    }
 }
