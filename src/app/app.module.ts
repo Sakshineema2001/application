@@ -23,6 +23,7 @@ import {MatTableModule} from '@angular/material/table';
 import { UpdateEliteComponent } from './update-elite/update-elite.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { MatSortModule } from '@angular/material/sort';
     RouterModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatIconModule
 
   ],
   providers: [],

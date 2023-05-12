@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { EliteService } from '../elite.service';
 import { Course, Elite } from 'src/Elite';
 import { Router } from '@angular/router';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 @Component({
@@ -9,30 +12,42 @@ import { Router } from '@angular/router';
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css']
 })
-export class DataTableComponent implements OnInit{
+export class DataTableComponent implements OnInit,AfterViewInit{
   
-elite !: Elite[];
 courses !: Course[];
+displayedColumns: string[] = ['id', 'name', 'date', 'contactNo','city','state','course','actions'];
+dataSource: MatTableDataSource<Elite> = new MatTableDataSource<Elite>();
+searchValue: string = '';
+
+@ViewChild(MatPaginator) paginator !: MatPaginator;
+@ViewChild(MatSort) sort !: MatSort;
 
  constructor(private service:EliteService, private roter:Router){
-
+    
  }
   ngOnInit(): void {
-   this.getEliteDatas();
-   this.getCourseData();
-  }
-
-  private getEliteDatas(){
-    this.service.getEliteData().subscribe((data) =>{
-      this.elite = data as Elite[];
+    
+    this.service.getEliteData().subscribe((data:any) => {
+      this.dataSource.data = data;
     });
-  }
 
-  private getCourseData() : void{
     this.service.getCourses().subscribe((data) =>{
       this.courses = data as Course[];
-      
     })
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter() {
+    this.dataSource.filter = this.searchValue.trim().toLowerCase();
+  }
+
+  clearFilter() {
+    this.searchValue = '';
+    this.applyFilter();
   }
 
   getCourseName(id: number): string {

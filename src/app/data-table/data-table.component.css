@@ -6,3 +6,11 @@ table {
     height: 40px;
     width: 100px;
   }
+  .ml20{
+    margin-left: 20px;
+  }
+.example-filter{
+  width: 20%;
+  height: 60px;
+  margin-left: 680px;
+}
