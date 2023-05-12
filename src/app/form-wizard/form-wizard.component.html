@@ -1,0 +1,234 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Form Wizard For Elite</h1>
+        </mat-card-title>
+        <mat-stepper labelPosition="bottom" #stepper>
+          <mat-step [stepControl]="formWizard">
+            <form [formGroup]="formWizard">
+              <fieldset formGroupName="firstFormGroup">
+              <ng-template matStepLabel>Fill out your Personal Details</ng-template>
+              <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Enter Name">
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>contactNo</mat-label>
+                  <input matInput placeholder="Enter contactNo" >
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field  class="example-full-width mt20 width">
+                  <mat-label>Courses</mat-label>
+                  <mat-select  >
+                    <mat-option >
+                      option1
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field appearance="fill" class="example-form-field example-full-width">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="datepicker" name="date" >
+                  <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                  <mat-datepicker #datepicker>
+                    <mat-datepicker-actions>
+                      <button mat-button matDatepickerCancel>Cancel</button>
+                      <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                    </mat-datepicker-actions>
+                  </mat-datepicker>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field  class="example-full-width mt20 width">
+                  <mat-label>State</mat-label>
+                  <mat-select  >
+                    <mat-option >
+                      option1
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field  class="example-full-width mt20 width">
+                  <mat-label>City</mat-label>
+                  <mat-select >
+                    <mat-option >
+                     option1
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-label><h3>Select an option for payment</h3></mat-label>
+                <mat-radio-group aria-label="Select an option" >
+                  <mat-radio-button value="online">Online</mat-radio-button>
+                  <mat-radio-button value="cash" >Cash</mat-radio-button>
+                </mat-radio-group>
+              </div>
+               <div class="md-3">
+               <mat-form-field class="example-full-width">
+                <mat-label>Leave a description</mat-label>
+                <textarea matInput placeholder="Ex. It makes me feel..." ></textarea>
+              </mat-form-field>
+            </div>
+            <div class="md-3">
+              <mat-checkbox >Approved</mat-checkbox>
+            </div>
+              <div>
+                <button mat-raised-button color="primary" class="mt20" matStepperNext >Next</button>
+              </div>
+            </fieldset>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="formWizard">
+            <form [formGroup]="formWizard">
+              <fieldset formGroupName="secondFormGroup">
+              <ng-template matStepLabel>Fill out your Bank Information</ng-template>
+              <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Account No</mat-label>
+                  <input matInput placeholder="Enter Name">
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Owner Name</mat-label>
+                  <input matInput placeholder="Enter contactNo" >
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>IFSC Code</mat-label>
+                  <input matInput placeholder="Enter contactNo" >
+                </mat-form-field>
+               </div>
+              <div>
+                <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+                <button mat-raised-button color="primary" class="ml20" matStepperNext>Next</button>
+              </div>
+            </fieldset>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Preview</ng-template>
+            <form [formGroup]="formWizard">
+              <fieldset formGroupName="thirdFormGroup"></fieldset>
+              <ng-template matStepLabel>Fill out your Personal Details</ng-template>
+              <h2 class="mt20"><b>Personal Infromation</b></h2>
+              <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Enter Name">
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>contactNo</mat-label>
+                  <input matInput placeholder="Enter contactNo" >
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field  class="example-full-width mt20 width">
+                  <mat-label>Courses</mat-label>
+                  <mat-select  >
+                    <mat-option >
+                      option1
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field appearance="fill" class="example-form-field example-full-width">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="datepicker" name="date" >
+                  <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                  <mat-datepicker #datepicker>
+                    <mat-datepicker-actions>
+                      <button mat-button matDatepickerCancel>Cancel</button>
+                      <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                    </mat-datepicker-actions>
+                  </mat-datepicker>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field  class="example-full-width mt20 width">
+                  <mat-label>State</mat-label>
+                  <mat-select  >
+                    <mat-option >
+                      option1
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field  class="example-full-width mt20 width">
+                  <mat-label>City</mat-label>
+                  <mat-select >
+                    <mat-option >
+                     option1
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-label><h3>Select an option for payment</h3></mat-label>
+                <mat-radio-group aria-label="Select an option" >
+                  <mat-radio-button value="online">Online</mat-radio-button>
+                  <mat-radio-button value="cash" >Cash</mat-radio-button>
+                </mat-radio-group>
+              </div>
+               <div class="md-3">
+               <mat-form-field class="example-full-width">
+                <mat-label>Leave a description</mat-label>
+                <textarea matInput placeholder="Ex. It makes me feel..." ></textarea>
+              </mat-form-field>
+            </div>
+            <div class="md-3">
+              <mat-checkbox >Approved</mat-checkbox>
+            </div>
+            <mat-divider></mat-divider>
+            <h2 class="mt20"><b>Bank Infromation</b></h2>
+              <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Account No</mat-label>
+                  <input matInput placeholder="Enter Name">
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Owner Name</mat-label>
+                  <input matInput placeholder="Enter contactNo" >
+                </mat-form-field>
+               </div>
+               <div class="md-3">
+                <mat-form-field class="example-full-width">
+                  <mat-label>IFSC Code</mat-label>
+                  <input matInput placeholder="Enter contactNo" >
+                </mat-form-field>
+               </div>
+            </form>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8">
+                  <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+                  <button mat-raised-button color="warn" class="ml20" matStepperNext (click)="stepper.reset()">Reset</button>
+                </div>
+                <div class="col-sm-4">
+                  <button mat-raised-button color="primary" matStepperNext>Submit</button>
+                </div>
+              </div>
+            </div>
+          </mat-step>
+        </mat-stepper>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>

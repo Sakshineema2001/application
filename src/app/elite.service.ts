@@ -43,4 +43,8 @@ export class EliteService {
     return this.http.get(`${this.baseurl}/cities/${id}`)
   }
 
+  public postData(elite:any){
+    return this.http.post(`${this.baseurl}/create`,elite)
+  }
+
 }

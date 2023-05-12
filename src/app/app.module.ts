@@ -24,6 +24,10 @@ import { UpdateEliteComponent } from './update-elite/update-elite.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
+import { FormWizardComponent } from './form-wizard/form-wizard.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +35,7 @@ import {MatIconModule} from '@angular/material/icon';
     DataTableComponent,
     RegisterComponent,
     UpdateEliteComponent,
+    FormWizardComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatIconModule
+    MatIconModule,
+    MatStepperModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

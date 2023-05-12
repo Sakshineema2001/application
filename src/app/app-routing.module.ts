@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataTableComponent } from './data-table/data-table.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdateEliteComponent } from './update-elite/update-elite.component';
+import { FormWizardComponent } from './form-wizard/form-wizard.component';
 
 const routes: Routes = [
   {
-       path : '',
+       path : 'register',
        component: RegisterComponent
   },
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'update/:id',
     component: UpdateEliteComponent
+  },
+  {
+    path: '',
+    component: FormWizardComponent
   }
 ];
 
