@@ -3,7 +3,6 @@
 <mat-card>
     <mat-card-header>
         <h1><b>Elite Data List</b></h1>
-        <button class="ml20" mat-raised-button color="primary" routerLink="/register">Add</button>
         <mat-form-field class="example-filter">
             <input matInput placeholder="Filter" [(ngModel)]="searchValue" (keyup)="applyFilter()">
             <button mat-icon-button matSuffix (click)="clearFilter()" *ngIf="searchValue">

@@ -27,6 +27,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormWizardComponent } from './form-wizard/form-wizard.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     UpdateEliteComponent,
     FormWizardComponent,
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSortModule,
     MatIconModule,
     MatStepperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule
 
   ],
   providers: [],

@@ -4,6 +4,7 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdateEliteComponent } from './update-elite/update-elite.component';
 import { FormWizardComponent } from './form-wizard/form-wizard.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const routes: Routes = [
   {
@@ -19,8 +20,12 @@ const routes: Routes = [
     component: UpdateEliteComponent
   },
   {
-    path: '',
+    path: 'add-form-wizard',
     component: FormWizardComponent
+  },
+  {
+    path: 'reactive-form-group',
+    component: ReactiveFormComponent
   }
 ];
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Elite } from 'src/Elite';
 import { Observable } from 'rxjs';
+import { FamilyInfo } from './familyInfo';
 
 @Injectable({
   providedIn: 'root'
@@ -47,4 +48,7 @@ export class EliteService {
     return this.http.post(`${this.baseurl}/create`,elite)
   }
 
+  public createFamilyInfo(familyInfo: FamilyInfo[]): Observable<any> {
+    return this.http.post<any>(`${this.baseurl}/family-info`, familyInfo);
+  }
 }
