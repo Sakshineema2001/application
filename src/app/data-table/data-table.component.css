@@ -9,6 +9,12 @@ table {
   .ml20{
     margin-left: 20px;
   }
+  .mt20{
+    margin-top: 20px;
+  }
+  .ml10{
+    margin-left: 10px;
+  }
 .example-filter{
   width: 20%;
   height: 60px;

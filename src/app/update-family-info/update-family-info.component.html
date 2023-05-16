@@ -1,0 +1,54 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h1><b>Reactive Form Family Information</b>
+                <button mat-raised-button color="primary" class="mb20 mt20 ml20 text-center" (click)="addFamilyInfo()">Add More</button>
+              </h1>
+            </mat-card-title>
+          </mat-card-header>
+          <form class="ml20 mr20" [formGroup]="familyForm" (ngSubmit)="submit()">
+            <div class="container" *ngFor="let group of familyArray.controls; let i = index;" formArrayName="familyInfo">
+              <div class="form-group jumbotron" [formGroupName]='i'>
+                <h2 *ngIf="i>0"> <b>Family Information {{i}}</b> </h2>
+                <div class="md-3">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Father Name</mat-label>
+                    <input matInput placeholder="Enter Father Name" name="father" formControlName="father">
+                  </mat-form-field>
+                </div>
+                <div class="md-3">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Mother Name</mat-label>
+                    <input matInput placeholder="Enter Mother Name" name="mother" formControlName="mother">
+                  </mat-form-field>
+                </div>
+                <div class="md-3">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>No of Siblings</mat-label>
+                    <input matInput placeholder="Enter Siblings No" name="siblingsNo" formControlName="siblingsNo">
+                  </mat-form-field>
+                </div>
+                <div class="md-3">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Father Occupation</mat-label>
+                    <input matInput placeholder="Enter Father Occupation" name="fatherOccupation" formControlName="fatherOccupation">
+                  </mat-form-field>
+                </div>
+                <div class="md-3">
+                  <button *ngIf="i > 0" class="btn btn-danger float-end mb-3 mb20 mt20" (click)="removeFamilyInfo(i)">Remove family info</button>
+                </div>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="md-3">
+              <button type="submit" mat-raised-button color="primary" class="mb20 mt20 text-center">Update</button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

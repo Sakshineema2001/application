@@ -48,7 +48,21 @@ export class EliteService {
     return this.http.post(`${this.baseurl}/create`,elite)
   }
 
-  public createFamilyInfo(familyInfo: FamilyInfo[]): Observable<any> {
+  public createFamilyInfo1(familyInfo: FamilyInfo[]): Observable<any> {
     return this.http.post<any>(`${this.baseurl}/family-info`, familyInfo);
   }
+
+  public createFamilyInfo(eliteId: number, familyInfo: any[]): Observable<any> {
+    return this.http.post<any>(`${this.baseurl}/${eliteId}/family-info`, familyInfo);
+  }
+
+  public updateFamilyInfo(eliteId: number, familyInfo: any[]): Observable<any> {
+    console.log('me--------')
+    return this.http.put<any>(`${this.baseurl}/${eliteId}/family-info/update`, familyInfo);
+  }
+
+  getFamilyInfoByEliteId(eliteId: number): Observable<any> {
+    return this.http.get<any>(`${this.baseurl}/${eliteId}/family-info/get`);
+  }
+
 }

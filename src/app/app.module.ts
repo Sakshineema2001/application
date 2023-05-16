@@ -29,6 +29,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { UpdateFamilyInfoComponent } from './update-family-info/update-family-info.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     UpdateEliteComponent,
     FormWizardComponent,
     ReactiveFormComponent,
+    UpdateFamilyInfoComponent,
   ],
   imports: [
     BrowserModule,

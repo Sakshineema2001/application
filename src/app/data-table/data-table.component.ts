@@ -55,6 +55,10 @@ searchValue: string = '';
     return course ? course.courseName : '';
   }
 
+  updateFamilyInfo(id: number){
+    this.roter.navigate(['reactive-update', id]);
+  }
+
   updateElite(id: number){
     this.roter.navigate(['update', id]);
   }
@@ -64,6 +68,10 @@ searchValue: string = '';
       location.reload();
       this.roter.navigate(['/data-table'])
     })
+  }
+
+  openFamilyInfoForm(eliteId : number){
+     this.roter.navigate(['reactive-form-group',eliteId]);
   }
 
 }
