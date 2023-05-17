@@ -58,7 +58,6 @@ export class UpdateFamilyInfoComponent {
   submit(): void {
     if (this.familyForm.valid) {
       const eliteId = this.getEliteId();
-      console.log('----------------' + eliteId)
       const familyInfoData = this.familyArray.value;
       this.service.updateFamilyInfo(eliteId, familyInfoData).subscribe(
         (response) => {

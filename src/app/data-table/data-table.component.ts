@@ -63,6 +63,10 @@ searchValue: string = '';
     this.roter.navigate(['update', id]);
   }
 
+  updateFormWizard(id: number){
+    this.roter.navigate(['form-wizard-update', id]);
+  }
+
   delete(id :number){
     this.service.deleteElite(id).subscribe((data) =>{
       location.reload();

@@ -57,7 +57,6 @@ export class EliteService {
   }
 
   public updateFamilyInfo(eliteId: number, familyInfo: any[]): Observable<any> {
-    console.log('me--------')
     return this.http.put<any>(`${this.baseurl}/${eliteId}/family-info/update`, familyInfo);
   }
 

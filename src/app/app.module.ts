@@ -30,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { UpdateFamilyInfoComponent } from './update-family-info/update-family-info.component';
+import { UpdateFormWizardComponent } from './update-form-wizard/update-form-wizard.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { UpdateFamilyInfoComponent } from './update-family-info/update-family-in
     FormWizardComponent,
     ReactiveFormComponent,
     UpdateFamilyInfoComponent,
+    UpdateFormWizardComponent,
   ],
   imports: [
     BrowserModule,

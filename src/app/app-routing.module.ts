@@ -6,6 +6,7 @@ import { UpdateEliteComponent } from './update-elite/update-elite.component';
 import { FormWizardComponent } from './form-wizard/form-wizard.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { UpdateFamilyInfoComponent } from './update-family-info/update-family-info.component';
+import { UpdateFormWizardComponent } from './update-form-wizard/update-form-wizard.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'reactive-update/:id',
     component: UpdateFamilyInfoComponent
+  },
+  {
+    path: 'form-wizard-update/:id',
+    component: UpdateFormWizardComponent
   }
 ];
 
