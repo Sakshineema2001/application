@@ -91,6 +91,7 @@ export class UpdateFormWizardComponent {
   })
   this.service.getAllState().subscribe((data:any) =>{
    this.state = data;
+   this.onChangeState(this.elite)
   })
 
   }
